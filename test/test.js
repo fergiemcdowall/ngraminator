@@ -1,95 +1,110 @@
-var test = require('tape')
-var ngraminator = require('../')
+const test = require('tape')
+const ngraminator = require('../')
+const str = "mary had a little lamb it's fleece"
 
 test('basic ngrams (length 3)', function (t) {
   t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
   var expectedResult = [
-    ['mary', 'had', 'a'],
-    ['had', 'a', 'little'],
     ['a', 'little', 'lamb'],
+    ['had', 'a', 'little'],
+    ['lamb', 'it\'s', 'fleece'],
     ['little', 'lamb', 'it\'s'],
-    ['lamb', 'it\'s', 'fleece']
+    ['mary', 'had', 'a']
   ]
-  var actualResult = ngraminator.ngram(arr, 3)
+  var actualResult = ngraminator(str.split(' '), [3])
   t.looseEqual(actualResult, expectedResult)
 })
 
 test('basic ngrams (length 6)', function (t) {
   t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
   var expectedResult = [
-    [ 'mary', 'had', 'a', 'little', 'lamb', 'it\'s' ],
-    [ 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece' ]
+    [ 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece' ],
+    [ 'mary', 'had', 'a', 'little', 'lamb', 'it\'s' ]
   ]
-  var actualResult = ngraminator.ngram(arr, 6)
+  var actualResult = ngraminator(str.split(' '), [6])
   t.looseEqual(actualResult, expectedResult)
 })
 
 test('basic ngrams (length 1)', function (t) {
   t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
   var expectedResult = [
-    [ 'mary' ], [ 'had' ], [ 'a' ], [ 'little' ], [ 'lamb' ], [ 'it\'s' ], [ 'fleece' ]
+    [ 'a' ],
+    [ 'fleece' ],
+    [ 'had' ],
+    [ 'it\'s' ],
+    [ 'lamb' ],
+    [ 'little' ],
+    [ 'mary' ]
   ]
-  var actualResult = ngraminator.ngram(arr, 1)
+  var actualResult = ngraminator(str.split(' '), [1])
   t.looseEqual(actualResult, expectedResult)
 })
 
 test('ngrams of 2 seperate lengths (length [1, 2])', function (t) {
   t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
   var expectedResult = [
-    [ 'mary' ],
-    [ 'had' ],
     [ 'a' ],
-    [ 'little' ],
-    [ 'lamb' ],
-    [ 'it\'s' ],
+    [ 'a', 'little' ],
     [ 'fleece' ],
-    [ 'mary', 'had' ],
+    [ 'had' ],
     [ 'had', 'a' ],
-    [ 'a', 'little' ],
-    [ 'little', 'lamb' ],
-    [ 'lamb', 'it\'s' ],
-    [ 'it\'s', 'fleece' ] ]
-  var actualResult = ngraminator.ngram(arr, [1, 2])
-  t.looseEqual(actualResult, expectedResult)
-})
-
-test('ngrams of 2 seperate lengths (length [2, 5, 1])', function (t) {
-  t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
-  var expectedResult = [
-    [ 'mary', 'had' ],
-    [ 'had', 'a' ],
-    [ 'a', 'little' ],
-    [ 'little', 'lamb' ],
-    [ 'lamb', 'it\'s' ],
+    [ 'it\'s' ],
     [ 'it\'s', 'fleece' ],
-    [ 'mary', 'had', 'a', 'little', 'lamb' ],
-    [ 'had', 'a', 'little', 'lamb', 'it\'s' ],
-    [ 'a', 'little', 'lamb', 'it\'s', 'fleece' ],
-    [ 'mary' ], [ 'had' ], [ 'a' ], [ 'little' ], [ 'lamb' ], [ 'it\'s' ], [ 'fleece' ]
+    [ 'lamb' ],
+    [ 'lamb', 'it\'s' ],
+    [ 'little' ],
+    [ 'little', 'lamb' ],
+    [ 'mary' ],
+    [ 'mary', 'had' ]
   ]
-  var actualResult = ngraminator.ngram(arr, [2, 5, 1])
+  var actualResult = ngraminator(str.split(' '), [1, 2])
   t.looseEqual(actualResult, expectedResult)
 })
 
-test('ngrams of a range of lengths (length { gte: 4, lte: 6 })', function (t) {
+test('ngrams of 3 seperate lengths (length [2, 5, 1])', function (t) {
   t.plan(1)
-  var arr = ['mary', 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece']
   var expectedResult = [
-    [ 'mary', 'had', 'a', 'little' ],
-    [ 'had', 'a', 'little', 'lamb' ],
-    [ 'a', 'little', 'lamb', 'it\'s' ],
-    [ 'little', 'lamb', 'it\'s', 'fleece' ],
-    [ 'mary', 'had', 'a', 'little', 'lamb' ],
-    [ 'had', 'a', 'little', 'lamb', 'it\'s' ],
+    [ 'a' ],
+    [ 'a', 'little' ],
     [ 'a', 'little', 'lamb', 'it\'s', 'fleece' ],
-    [ 'mary', 'had', 'a', 'little', 'lamb', 'it\'s' ],
-    [ 'had', 'a', 'little', 'lamb', 'it\'s', 'fleece' ]
+    [ 'fleece' ],
+    [ 'had' ],
+    [ 'had', 'a' ],
+    [ 'had', 'a', 'little', 'lamb', 'it\'s' ],
+    [ 'it\'s' ],
+    [ 'it\'s', 'fleece' ],
+    [ 'lamb' ],
+    [ 'lamb', 'it\'s' ],
+    [ 'little' ],
+    [ 'little', 'lamb' ],
+    [ 'mary' ],
+    [ 'mary', 'had' ],
+    [ 'mary', 'had', 'a', 'little', 'lamb' ]
   ]
-  var actualResult = ngraminator.ngram(arr, { gte: 4, lte: 6 })
+  var actualResult = ngraminator(str.split(' '), [2, 5, 1])
+  t.looseEqual(actualResult, expectedResult)
+})
+
+test('ngrams of 3 seperate lengths (length [2, 5, 1]) with pretty result', function (t) {
+  t.plan(1)
+  var expectedResult = [
+    'a',
+    'a little',
+    "a little lamb it's fleece",
+    'fleece',
+    'had',
+    'had a',
+    "had a little lamb it's",
+    "it's",
+    "it's fleece",
+    'lamb',
+    "lamb it's",
+    'little',
+    'little lamb',
+    'mary',
+    'mary had',
+    'mary had a little lamb'
+  ]
+  var actualResult = ngraminator(str.split(' '), [2, 5, 1]).map(item => item.join(' '))
   t.looseEqual(actualResult, expectedResult)
 })
