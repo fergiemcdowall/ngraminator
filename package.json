@@ -1,6 +1,6 @@
 {
   "name": "ngraminator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A utility for making ngrams from Arrays",
   "main": "index.js",
   "scripts": {
