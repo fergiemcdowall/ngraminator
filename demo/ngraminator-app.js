@@ -1,21 +1,35 @@
 // Populating div with only meaningful words
 const populateNgrams = function(result) {
   console.log('Boom')
-  console.log(result)
-  const node = document.createElement('span')
+  console.dir(result)
+  const node = document.createElement('code')
   node.innerHTML = result
   emptyElement('nGraminated')
   document.getElementById('nGraminated').appendChild(node)
 }
 
-// Listen to key up and initiate n-gramming
+// Listen to key up on text and initiate a headline parser
 document.getElementById("text").onkeyup = function() {
-  // const oldString = document.getElementById("text").value.split(' ')
-  // const newString = sw.removeStopwords(oldString)
-  // console.log('oldString: ' + oldString)
-  // console.log('newString: ' + newString)
-  populateNgrams(newString.join(' '))
+  calculateNgrams()
 }
+
+// Listen to key up on integerArray and initiate a headline parser
+document.getElementById("integerArray").onkeyup = function() {
+  calculateNgrams()
+}
+
+// calculate nGrams
+const calculateNgrams = function () {
+  var text = document.getElementById("text").value.split(' ')
+  var integerArray = document.getElementById("integerArray").value.split(',')
+  console.log(text)
+  console.log(integerArray)
+  var ngrams = []
+  var ngrams = ngraminator(text, integerArray)
+  console.log('N-grams: ' + ngrams)
+  populateNgrams(ngrams)
+}
+
 
 // Empty HTML element
 const emptyElement = function (element) {
