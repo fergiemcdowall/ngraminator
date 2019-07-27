@@ -1,19 +1,9 @@
-// Populating div with only meaningful words
-const populateNgrams = function(result) {
-  console.log('Boom')
-  console.dir(result)
-  const node = document.createElement('code')
-  node.innerHTML = result
-  emptyElement('nGraminated')
-  document.getElementById('nGraminated').appendChild(node)
-}
-
-// Listen to key up on text and initiate a headline parser
+// Listen to key up on text and initiate ngraminator
 document.getElementById("text").onkeyup = function() {
   calculateNgrams()
 }
 
-// Listen to key up on integerArray and initiate a headline parser
+// Listen to key up on integerArray and initiate ngraminator
 document.getElementById("integerArray").onkeyup = function() {
   calculateNgrams()
 }
@@ -30,6 +20,16 @@ const calculateNgrams = function () {
   populateNgrams(ngrams)
 }
 
+// Populating div ngrams
+// Still need some work...
+const populateNgrams = function(result) {
+  console.log('Boom')
+  console.dir(result)
+  const node = document.createElement('code')
+  node.innerHTML = result
+  emptyElement('nGraminated')
+  document.getElementById('nGraminated').appendChild(node)
+}
 
 // Empty HTML element
 const emptyElement = function (element) {
