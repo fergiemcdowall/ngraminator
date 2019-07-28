@@ -1,8 +1,26 @@
 # ngraminator
 
-A really small ngram generator
+A really small ngram generator for Node.js and the browser.
 
+
+## Usage
+
+### Node.js
 ```javascript
+ngraminator = require('ngraminator')
+// ngraminator
+```
+
+### Script tag
+```HTML
+<script src="ngraminator.js"></script>
+
+<script>
+// ngraminator
+</script>
+```
+
+### Creating ngrams
 
 const str = "mary had a little lamb it's fleece"
 
