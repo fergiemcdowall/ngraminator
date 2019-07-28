@@ -12,20 +12,23 @@ document.getElementById("integerArray").onkeyup = function() {
 const calculateNgrams = function () {
   var text = document.getElementById("text").value.split(' ')
   var integerArray = document.getElementById("integerArray").value.split(',')
-  console.log(text)
-  console.dir(integerArray)
   var ngrams = []
-  var ngrams = ngraminator(text, [3])
-  console.log('N-grams: ' + ngrams)
+  integerArray = stringToInteger(integerArray)
+  var ngrams = ngraminator(text, integerArray)
   ngrams = JSON.stringify(ngrams, 2, ' ')
   populateNgrams(ngrams)
 }
 
+// convert array of strings to integers
+const stringToInteger = function (array) {
+  for (var i = 0; i < array.length; i++) {
+    array[i] = Number(array[i])
+  }
+  return array
+}
+
 // Populating div ngrams
-// Still need some work...
 const populateNgrams = function(result) {
-  console.log('Boom')
-  console.dir(result)
   const node = document.createElement('pre')
   node.innerHTML = result
   emptyElement('nGraminated')

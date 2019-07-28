@@ -17,16 +17,24 @@ h2 {
   padding:10px;
 }
 
-#newString {
+#nGrams {
   padding: 10px;
   background: #eeeeee;
+}
+
+pre {
+  margin:10px 0 0 0;
 }
 #stopwordsRemoved span {
   font-size:1.2rem;
 }
 
-input#text {
+input#text, input#integerArray {
   width:100%;
   font-size:1.2rem;
   margin-left:0;
+}
+
+input#integerArray {
+  width: 200px;
 }
