@@ -2,7 +2,7 @@
 // nGramLengths is of the form [ 9, 10 ]
 const getNGramsOfMultipleLengths = function (inputArray, nGramLengths) {
   return nGramLengths.reduce(
-    (acc, cur) => [ ...getNGramsOfSingleLength(inputArray, cur), ...acc ], []
+    (acc, cur) => [...getNGramsOfSingleLength(inputArray, cur), ...acc], []
   ).sort()
 }
 
