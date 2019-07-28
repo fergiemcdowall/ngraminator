@@ -2,13 +2,17 @@
 
 A really small ngram generator for Node.js and the browser.
 
+[![NPM version][npm-version-image]][npm-url]
+[![NPM downloads][npm-downloads-image]][npm-url]
+[![MIT License][license-image]][license-url]
+[![Build Status][travis-image]][travis-url]
 
-## Usage
+## Initiation
 
 ### Node.js
 ```javascript
 ngraminator = require('ngraminator')
-// ngraminator
+// ngraminator(wordArray, ngramLenghtArray) available
 ```
 
 ### Script tag
@@ -16,11 +20,11 @@ ngraminator = require('ngraminator')
 <script src="ngraminator.js"></script>
 
 <script>
-// ngraminator
+// ngraminator(wordArray, ngramLenghtArray)
 </script>
 ```
 
-### Creating ngrams
+## Usage
 
 ```javascript
 const str = "mary had a little lamb it's fleece"
@@ -98,3 +102,11 @@ ngraminator(str.split(' '), [1, 2, 5]).map(item => item.join(' '))
 //
 
 ```
+
+[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+[npm-url]: https://npmjs.org/package/ngraminator
+[npm-version-image]: http://img.shields.io/npm/v/ngraminator.svg?style=flat
+[npm-downloads-image]: http://img.shields.io/npm/dm/ngraminator.svg?style=flat
+[travis-url]: http://travis-ci.org/fergiemcdowall/ngraminator
+[travis-image]: http://img.shields.io/travis/fergiemcdowall/ngraminator.svg?style=flat
