@@ -20,7 +20,7 @@ ngraminator = require('ngraminator')
 <script src="ngraminator.js"></script>
 
 <script>
-// ngraminator(wordArray, ngramLenghtArray)
+// ngraminator(wordArray, ngramLenghtArray) available
 </script>
 ```
 
