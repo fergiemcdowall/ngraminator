@@ -22,6 +22,7 @@ ngraminator = require('ngraminator')
 
 ### Creating ngrams
 
+```javascript
 const str = "mary had a little lamb it's fleece"
 
 // get ngrams of length 3
