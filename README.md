@@ -1,6 +1,6 @@
 # ngraminator
 
-A really small ngram generator for Node.js and the browser.
+A really small ngram generator for Node.js and the browser. Check out the [interactive demo](https://fergiemcdowall.github.io/ngraminator/demo/).
 
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
