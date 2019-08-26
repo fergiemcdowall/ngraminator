@@ -12,13 +12,13 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 ## Initiation
 
 ### Node.js
-```javascript
+```JavaScript
 ngraminator = require('ngraminator')
 // ngraminator(wordArray, ngramLenghtArray) available
 ```
 
 ### Script tag
-```HTML
+```html
 <script src="ngraminator.js"></script>
 
 <script>
