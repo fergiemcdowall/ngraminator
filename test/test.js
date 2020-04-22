@@ -12,7 +12,7 @@ test('basic ngrams (length 3)', function (t) {
     ['mary', 'had', 'a']
   ]
   var actualResult = ngraminator(str.split(' '), [3])
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
 
 test('basic ngrams (length 6)', function (t) {
@@ -22,7 +22,7 @@ test('basic ngrams (length 6)', function (t) {
     ['mary', 'had', 'a', 'little', 'lamb', 'it\'s']
   ]
   var actualResult = ngraminator(str.split(' '), [6])
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
 
 test('basic ngrams (length 1)', function (t) {
@@ -37,7 +37,7 @@ test('basic ngrams (length 1)', function (t) {
     ['mary']
   ]
   var actualResult = ngraminator(str.split(' '), [1])
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
 
 test('ngrams of 2 seperate lengths (length [1, 2])', function (t) {
@@ -58,7 +58,7 @@ test('ngrams of 2 seperate lengths (length [1, 2])', function (t) {
     ['mary', 'had']
   ]
   var actualResult = ngraminator(str.split(' '), [1, 2])
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
 
 test('ngrams of 3 seperate lengths (length [2, 5, 1])', function (t) {
@@ -82,7 +82,7 @@ test('ngrams of 3 seperate lengths (length [2, 5, 1])', function (t) {
     ['mary', 'had', 'a', 'little', 'lamb']
   ]
   var actualResult = ngraminator(str.split(' '), [2, 5, 1])
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
 
 test('ngrams of 3 seperate lengths (length [2, 5, 1]) with pretty result', function (t) {
@@ -106,5 +106,5 @@ test('ngrams of 3 seperate lengths (length [2, 5, 1]) with pretty result', funct
     'mary had a little lamb'
   ]
   var actualResult = ngraminator(str.split(' '), [2, 5, 1]).map(item => item.join(' '))
-  t.looseEqual(actualResult, expectedResult)
+  t.deepEqual(actualResult, expectedResult)
 })
