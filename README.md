@@ -4,9 +4,9 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 [![JavaScript Style Guide][standardjs-image]][standardjs-url]
-[![Build Status][travis-image]][travis-url]
 [![MIT License][license-image]][license-url]
 
 <img width ="600" alt="Demo at work" src="https://user-images.githubusercontent.com/236656/63688481-d5df0580-c807-11e9-8bf6-67dac790d761.png">
