@@ -4,8 +4,10 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
-[![MIT License][license-image]][license-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![JavaScript Style Guide][standardjs-image]][standardjs-url]
 [![Build Status][travis-image]][travis-url]
+[![MIT License][license-image]][license-url]
 
 <img width ="600" alt="Demo at work" src="https://user-images.githubusercontent.com/236656/63688481-d5df0580-c807-11e9-8bf6-67dac790d761.png">
 
@@ -112,3 +114,7 @@ ngraminator(str.split(' '), [1, 2, 5]).map(item => item.join(' '))
 [npm-downloads-image]: http://img.shields.io/npm/dm/ngraminator.svg?style=flat
 [travis-url]: http://travis-ci.org/fergiemcdowall/ngraminator
 [travis-image]: http://img.shields.io/travis/fergiemcdowall/ngraminator.svg?style=flat
+[snyk-url]: https://snyk.io/test/github/fergiemcdowall/ngraminator?targetFile=package.json
+[snyk-image]: https://snyk.io/test/github/fergiemcdowall/ngraminator/badge.svg?targetFile=package.json
+[standardjs-url]: https://standardjs.com
+[standardjs-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
