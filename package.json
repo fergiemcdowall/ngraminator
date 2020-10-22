@@ -15,7 +15,7 @@
   "author": "Fergus McDowall <fergusmcdowal@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "standard": "^14.3.3",
+    "standard": "^15.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^4.0.0",
     "tape": "^5.0.0-next.5",
