@@ -1,5 +1,4 @@
 const path = require('path')
-const pkg = require('./package.json')
 const glob = require('glob')
 
 module.exports = [
@@ -9,19 +8,7 @@ module.exports = [
     entry: './index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'ngraminator.' + pkg.version + '.js',
-      library: 'ngraminator'
-    },
-    devtool: 'none'
-  },
-
-  // Generating a latest browser version of ngraminator (same as latest version number)
-  {
-    mode: 'production',
-    entry: './index.js',
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'ngraminator.latest.js',
+      filename: 'ngraminator.js',
       library: 'ngraminator'
     },
     devtool: 'none'

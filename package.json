@@ -1,12 +1,12 @@
 {
   "name": "ngraminator",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A utility for making ngrams from Arrays",
   "main": "index.js",
   "scripts": {
     "compile-for-browser": "webpack",
     "empty-sandbox": "rm -rf test/sandbox && mkdir test/sandbox",
-    "test": "npm run empty-sandbox && standard --fix \"./index.js\" \"/test/*.js\" && npm run compile-for-browser && tape ./test/test.js && cat test/sandbox/bundle.js | tape-run && rm -rf test/sandbox"
+    "test": "npm run empty-sandbox && standard --fix \"./index.js\" \"./test/*.js\" && npm run compile-for-browser && tape ./test/test.js && cat test/sandbox/bundle.js | tape-run && rm -rf test/sandbox"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Fergus McDowall <fergusmcdowal@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "standard": "^15.0.0",
+    "standard": "^16.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^4.0.0",
     "tape": "^5.0.0-next.5",
