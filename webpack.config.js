@@ -1,5 +1,6 @@
 const path = require('path')
 const glob = require('glob')
+const webpack = require('webpack')
 
 module.exports = [
   // Generating browser version of ngraminator
@@ -11,7 +12,7 @@ module.exports = [
       filename: 'ngraminator.js',
       library: 'ngraminator'
     },
-    devtool: 'none'
+    devtool: 'hidden-source-map'
   },
 
   // Generating test script for the browser
@@ -22,8 +23,24 @@ module.exports = [
       path: path.resolve(__dirname, './test/sandbox'),
       filename: 'bundle.js'
     },
+    resolve: {
+      fallback: {
+        fs: false,
+        path: require.resolve('path-browserify'),
+        stream: require.resolve('stream-browserify'),
+        buffer: require.resolve('buffer/')
+      }
+    },
     node: {
-      fs: 'empty'
-    }
+      global: true,
+      __filename: false,
+      __dirname: false
+    },
+    plugins: [
+      // fix "process is not defined" error:
+      new webpack.ProvidePlugin({
+        process: 'process/browser'
+      })
+    ]
   }
 ]
