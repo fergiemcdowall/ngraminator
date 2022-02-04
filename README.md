@@ -4,8 +4,7 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
+[![Build Status][CI-image]][CI-url]
 [![JavaScript Style Guide][standardjs-image]][standardjs-url]
 [![MIT License][license-image]][license-url]
 
@@ -13,18 +12,24 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 
 ## Initiation
 
-### Node.js
+### CJS - CommonJS
 ```JavaScript
-ngraminator = require('ngraminator')
+const { ngraminator } = require('ngraminator')
+// ngraminator(wordArray, ngramLenghtArray) available
+```
+
+### ESM - Ecmascript Modules
+```JavaScript
+import { ngraminator } from 'ngraminator'
 // ngraminator(wordArray, ngramLenghtArray) available
 ```
 
 ### Script tag
 ```html
-<script src="ngraminator.js"></script>
+<script src="ngraminator.umd.js"></script>
 
 <script>
-// ngraminator(wordArray, ngramLenghtArray) available
+// ngrm.ngraminator(wordArray, ngramLenghtArray) available
 </script>
 ```
 
@@ -112,9 +117,7 @@ ngraminator(str.split(' '), [1, 2, 5]).map(item => item.join(' '))
 [npm-url]: https://npmjs.org/package/ngraminator
 [npm-version-image]: http://img.shields.io/npm/v/ngraminator.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/ngraminator.svg?style=flat
-[travis-url]: http://travis-ci.org/fergiemcdowall/ngraminator
-[travis-image]: http://img.shields.io/travis/fergiemcdowall/ngraminator.svg?style=flat
-[snyk-url]: https://snyk.io/test/github/fergiemcdowall/ngraminator?targetFile=package.json
-[snyk-image]: https://snyk.io/test/github/fergiemcdowall/ngraminator/badge.svg?targetFile=package.json
+[CI-url]: https://github.com/fergiemcdowall/ngraminator/actions/workflows/tests.yml
+[CI-image]: https://github.com/fergiemcdowall/ngraminator/actions/workflows/tests.yml/badge.svg
 [standardjs-url]: https://standardjs.com
 [standardjs-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square

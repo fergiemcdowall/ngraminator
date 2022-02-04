@@ -1,6 +1,6 @@
-const test = require('tape')
-const ngraminator = require('../')
-const str = "mary had a little lamb it's fleece"
+import test from 'ava'
+import { ngraminator } from '../dist/ngraminator.cjs.js'
+const str = 'mary had a little lamb it\'s fleece'
 
 test('basic ngrams (length 3)', function (t) {
   t.plan(1)

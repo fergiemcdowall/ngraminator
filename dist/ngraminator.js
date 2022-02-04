@@ -1,1 +1,0 @@
-var ngraminator;ngraminator=(()=>{var r={10:r=>{const t=function(r,t){return r.slice(t-1).map(((n,e)=>r.slice(e,e+t)))};r.exports=function(r,n){return n.reduce(((n,e)=>[...t(r,e),...n]),[]).sort()}}},t={};return function n(e){if(t[e])return t[e].exports;var o=t[e]={exports:{}};return r[e](o,o.exports,n),o.exports}(10)})();
