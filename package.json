@@ -1,6 +1,6 @@
 {
   "name": "ngraminator",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A utility for making ngrams from Arrays",
   "main": "./dist/ngraminator.cjs.js",
   "module": "./dist/ngraminator.esm.mjs",
