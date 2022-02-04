@@ -8,6 +8,11 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 [![JavaScript Style Guide][standardjs-image]][standardjs-url]
 [![MIT License][license-image]][license-url]
 
+## Breaking change
+How the library is now required is slightly different. For CommonJS it used to be `const ngraminator = require('ngraminator')`, but now it is `const { ngraminator } = require('ngraminator')`
+
+And UMD used to be `ngraminator()`, but is now `ngrm.ngraminator()`
+
 <img width ="600" alt="Demo at work" src="https://user-images.githubusercontent.com/236656/63688481-d5df0580-c807-11e9-8bf6-67dac790d761.png">
 
 ## Initiation
