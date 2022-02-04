@@ -7,7 +7,7 @@
   "browser": "./dist/ngraminator.umd.js",
   "scripts": {
     "build": "rollup --config",
-    "test": "standard './*.js' './test/*.js' && npm run build && npx ava ./test/test.cjs.js && npx ava ./test/test.esm.mjs"
+    "test": "standard './*.js' './test/*.js' && npm run build && npx ava ./test/test.cjs.js && npx ava ./test/test.esm.mjs && npx ava ./test/ui-test.js"
   },
   "repository": {
     "type": "git",

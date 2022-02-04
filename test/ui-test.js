@@ -35,5 +35,5 @@ test('Add text "Mary had a little lamb" and compare array of ngrams', pageMacro,
   ngrammed = JSON.parse(ngrammed)
 
   // Check array
-  t.deepEqual(await ngrammed, [['a', 'little'],['a', 'little', 'lamb'], ['had', 'a'], ['had', 'a', 'little'], ['had', 'a', 'little', 'lamb'],['little', 'lamb'], ['mary', 'had'], [ 'mary', 'had', 'a'], ['mary', 'had', 'a', 'little']])
+  t.deepEqual(await ngrammed, [['a', 'little'], ['a', 'little', 'lamb'], ['had', 'a'], ['had', 'a', 'little'], ['had', 'a', 'little', 'lamb'], ['little', 'lamb'], ['mary', 'had'], ['mary', 'had', 'a'], ['mary', 'had', 'a', 'little']])
 })
