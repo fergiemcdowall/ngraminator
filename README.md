@@ -4,6 +4,7 @@ A really small ngram generator for Node.js and the browser. Check out the [inter
 
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
+[![](https://data.jsdelivr.com/v1/package/npm/ngraminator/badge?style=rounded)](https://www.jsdelivr.com/package/npm/ngraminator)
 [![Build Status][CI-image]][CI-url]
 [![JavaScript Style Guide][standardjs-image]][standardjs-url]
 [![MIT License][license-image]][license-url]
@@ -31,7 +32,7 @@ import { ngraminator } from 'ngraminator'
 
 ### Script tag
 ```html
-<script src="ngraminator.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ngraminator/dist/ngraminator.umd.min.js"></script>
 
 <script>
 // ngrm.ngraminator(wordArray, ngramLenghtArray) available
